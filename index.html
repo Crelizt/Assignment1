@@ -8,6 +8,36 @@
     <title>Home</title>
 </head>
 <body style="margin: 0px;">
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        }
+    </script>
     <div class="Header">
         <div>Wonderful Indonesia</div>
     </div>
@@ -19,10 +49,12 @@
             <div class="dropdown">
                 <button class="dropbtn">Content</button>
                 <div class="dropdown-content">
+
                   <a href="borobudur.html">Candi Borobudur</a>
                   <a href="bromo.html">Gunung Bromo</a>
                   <a href="kuta.html">Pantai Kuta</a>
                   <a href="rajaampat.html">Raja Ampat</a>
+
                 </div>
             </div>
         </li>
@@ -32,11 +64,45 @@
     </ul>
 
     <div class="Content">
-        <h1>Isi</h1>
-    </div>
+        <div>Keindahan Alam Indonesia</div>
+        <div class="slideshow-container">
 
-    <div class="Footer">
-        <div>&#169; Copyright 2021</div>
-    </div>
+            <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/borobudur_final.jpg" style="width:100%">
+            <div class="text">Candi Borobudur</div>
+            </div>
+        
+            <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/bromo_final.jpg" style="width:100%">
+            <div class="text">Gunung Bromo</div>
+            </div>
+        
+            <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/kuta_final2.jpg" style="width:100%">
+            <div class="text">Pantai Kuta</div>
+            </div>
+
+            <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/rajaampat_final.jpg" style="width:100%">
+            <div class="text">Pantai Raja Ampat</div>
+            </div>
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+            </div>
+
+<div class="Footer">
+    <div>&#169; Copyright 2021</div>
+</div>
 </body>
 </html>
