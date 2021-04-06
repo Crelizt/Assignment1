@@ -1,0 +1,16 @@
+.Content{
+    margin-left:12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3{
+    margin-right: 30px;
+}
+
+.title h1{
+    font-size: 40px;
+}
+
+.desc{
+    font-size: 15px;
+}
